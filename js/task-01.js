@@ -1,4 +1,4 @@
-console.log('Task 01.');
+console.log('Task 01');
 
 const categoriesList = document.querySelectorAll('li.item');
 
