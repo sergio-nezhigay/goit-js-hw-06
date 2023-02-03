@@ -9,7 +9,7 @@ function onFormLoginSubmit(event) {
     elements: { email, password },
   } = event.target;
 
-  if (email.value === '' || password.value === '') {
+  if (email.value === '' || password.value.trim() === '') {
     alert('Please fill in all the fields!');
     return console.log('Please fill in all the fields!');
   }
@@ -20,18 +20,3 @@ function onFormLoginSubmit(event) {
   console.log('Form data object: ', result);
   event.currentTarget.reset();
 }
-
-// function onFormLoginSubmit(event) {
-//     event.preventDefault();
-
-//     var formData = new FormData(event.target);
-//     for (let pair of formData.entries()) {
-//       console.log(pair[0] + ': ' + pair[1]);
-//       if (!pair[1]) {
-//         // Checking if the filed value is empty
-//         alert('Please fill in all the fields!');
-//         return console.log('Please fill in all the fields!');
-//       }
-//     }
-//     event.currentTarget.reset();
-//   }

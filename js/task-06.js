@@ -1,12 +1,15 @@
 const validationInputEl = document.querySelector('#validation-input');
 
+const switchClasses = (element, classToAdd, classToRemove) => {
+  element.classList.add(classToAdd);
+  element.classList.remove(classToRemove);
+};
+
 const onInputBlur = event => {
-  if (+event.currentTarget.value.length === +event.currentTarget.dataset.length) {
-    validationInputEl.classList.add('valid');
-    validationInputEl.classList.remove('invalid');
-  } else {
-    validationInputEl.classList.add('invalid');
-    validationInputEl.classList.remove('valid');
+  if (+event.currentTarget.value.length === +event.currentTarget.dataset.length)
+    switchClasses(validationInputEl, 'valid', 'invalid');
+  else {
+    switchClasses(validationInputEl, 'invalid', 'valid');
   }
 };
 
