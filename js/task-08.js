@@ -9,7 +9,7 @@ function onFormLoginSubmit(event) {
     elements: { email, password },
   } = event.target;
 
-  if (email.value === '' || password.value.trim() === '') {
+  if (email.value.trim() === '' || password.value.trim() === '') {
     alert('Please fill in all the fields!');
     return console.log('Please fill in all the fields!');
   }
